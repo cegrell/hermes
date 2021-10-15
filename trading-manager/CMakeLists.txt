@@ -5,7 +5,7 @@ cmake_minimum_required (VERSION 3.8)
 
 project ("trading-manager")
 
-find_package()
+#find_package()
 
 include_directories("include")
 

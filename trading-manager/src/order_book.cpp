@@ -1,6 +1,6 @@
 #include <trading-manager/order_book.hh>
 
-#include <boost/version.hpp>
+//#include <boost/version.hpp>
 #include <stdexcept>
 #include <limits>
 
@@ -19,9 +19,9 @@ namespace tm {
         , _timestamp{ timestamp }
         , _state{ trading_state::unknown }
     {
-#if BOOST_VERSION >= 105600
-        _orders.reserve(max_orders);
-#endif
+//#if BOOST_VERSION >= 105600
+//        _orders.reserve(max_orders);
+//#endif
     }
 
     void order_book::add(order order)

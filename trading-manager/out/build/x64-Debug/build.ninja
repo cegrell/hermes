@@ -45,6 +45,7 @@ build cmake_object_order_depends_target_trading-manager: phony || CMakeFiles\tra
 
 build CMakeFiles\trading-manager.dir\trading-manager.cpp.obj: CXX_COMPILER__trading-manager_Debug ..\..\..\trading-manager.cpp || cmake_object_order_depends_target_trading-manager
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -I..\..\..\include
   OBJECT_DIR = CMakeFiles\trading-manager.dir
   OBJECT_FILE_DIR = CMakeFiles\trading-manager.dir
   TARGET_COMPILE_PDB = CMakeFiles\trading-manager.dir\
@@ -52,6 +53,7 @@ build CMakeFiles\trading-manager.dir\trading-manager.cpp.obj: CXX_COMPILER__trad
 
 build CMakeFiles\trading-manager.dir\src\order_book.cpp.obj: CXX_COMPILER__trading-manager_Debug ..\..\..\src\order_book.cpp || cmake_object_order_depends_target_trading-manager
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -I..\..\..\include
   OBJECT_DIR = CMakeFiles\trading-manager.dir
   OBJECT_FILE_DIR = CMakeFiles\trading-manager.dir\src
   TARGET_COMPILE_PDB = CMakeFiles\trading-manager.dir\
