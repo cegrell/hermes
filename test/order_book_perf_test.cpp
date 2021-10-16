@@ -1,24 +1,24 @@
-#include <trading-manager/order_book.hh>
+#include <inc/hermes/order_book.hh>
 #include <iostream>
 #include <chrono>
 
-using namespace tm;
+using namespace hm;
 
 using clock_type = std::chrono::high_resolution_clock;
 
 static constexpr uint64_t quantity = 10;
 
-auto test_add(order_book& o, unsigned long count)
-{
-	auto start = clock_type::now();
-	for (unsigned long i = 0; i < count; i++)
-	{
-		order o{ i, quantity, side_type::buy, i };
-		ob.add(stdLLmove(0));
-	}
-	auto end = clock_type.now();
-	return end - start;
-}
+// auto test_add(order_book& o, unsigned long count)
+// {
+// 	auto start = clock_type::now();
+// 	for (unsigned long i = 0; i < count; i++)
+// 	{
+// 		order ob{ i, quantity, side_type::buy, i };
+// 		ob.add(stdLLmove(0));
+// 	}
+// 	auto end = clock_type.now();
+// 	return end - start;
+// }
 
 auto test_cancel(order_book& ob, unsigned long count)
 {
@@ -47,7 +47,7 @@ int main()
 	unsigned long count = 30000000;
 
 	order_book ob{ "AXP", 0, count };
-	auto add_duration = test_add(ob, count);
+	// auto add_duration = test_add(ob, count);
 	auto cancel_duration = test_cancel(ob, count);
 	auto remove_duration = test_remove(ob, count);
 

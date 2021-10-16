@@ -6,10 +6,10 @@
 /// querying per-asset order book state such as top and depth of book bid
 /// and ask price and size.
 
-#include <boost/multi_index/ordered_index.hpp>
-#include <boost/multi_index/hashed_index.hpp>
-#include <boost/multi_index_container.hpp>
-#include <boost/multi_index/member.hpp>
+//#include <boost/multi_index/ordered_index.hpp>
+//#include <boost/multi_index/hashed_index.hpp>
+//#include <boost/multi_index_container.hpp>
+//#include <boost/multi_index/member.hpp>
 
 #include <unordered_map>
 #include <cstdint>
@@ -19,7 +19,7 @@
 #include <list>
 #include <map>
 
-namespace tm {
+namespace hm {
 
     /// \addtogroup order-book
     /// @{
@@ -96,20 +96,20 @@ namespace tm {
     /// \brief Order book is a price-time prioritized list of buy and sell
     /// orders.
     class order_book {
-        using order_set = boost::multi_index::multi_index_container<
-            order,
-            boost::multi_index::indexed_by<
-            boost::multi_index::hashed_unique<
-            boost::multi_index::member<order, uint64_t, &order::id>
-            >
-            >
-        >;
-        using iterator = order_set::iterator;
+    //     using order_set = boost::multi_index::multi_index_container<
+    //         order,
+    //         boost::multi_index::indexed_by<
+    //         boost::multi_index::hashed_unique<
+    //         boost::multi_index::member<order, uint64_t, &order::id>
+    //         >
+    //         >
+    //     >;
+    //     using iterator = order_set::iterator;
 
         std::string _symbol;
         uint64_t _timestamp;
         trading_state _state;
-        order_set _orders;
+        // order_set _orders;
         std::map<uint64_t, price_level, std::greater<uint64_t>> _bids;
         std::map<uint64_t, price_level, std::less   <uint64_t>> _asks;
     public:
@@ -153,7 +153,7 @@ namespace tm {
         uint64_t midprice(size_t level) const;
 
     private:
-        void remove(iterator& iter);
+        // void remove(iterator& iter);
 
         template<typename T>
         void remove(const order& o, T& levels);
