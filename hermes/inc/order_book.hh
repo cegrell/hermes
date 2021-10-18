@@ -96,6 +96,9 @@ namespace hm {
     /// \brief Order book is a price-time prioritized list of buy and sell
     /// orders.
     class order_book {
+
+
+
     //     using order_set = boost::multi_index::multi_index_container<
     //         order,
     //         boost::multi_index::indexed_by<
