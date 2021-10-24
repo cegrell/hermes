@@ -164,7 +164,4 @@ namespace hm {
         template<typename T>
         price_level& lookup_or_create(T& levels, uint64_t price);
     };
-
-    /// @}
-
 }
